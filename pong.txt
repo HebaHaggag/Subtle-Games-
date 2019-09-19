@@ -1,4 +1,4 @@
-# Implementation of classic arcade game Pong
+# Implementation of classic arcade game Pong based on some linear algebra rules.
 
 import simplegui
 import random
@@ -52,6 +52,7 @@ def gutters():
         
 
 def spawn_ball(direction):
+""" This function spawns a ball on the screen from either the left or the right"""
     global ball_pos, ball_vel,speed 
     ball_vel=[0,0]
     speed=3          #speed of the ball , couldn't get how to use random.range
@@ -106,6 +107,7 @@ def draw(canvas):
    
     
 def paddle_collision():
+""" This function detects when the paddle manipylated by the user hits the top or down and make the paddels reflects automatically to the other direction"""
     global paddle2_vel ,paddle1_vel
     x=paddle1_pos+HALF_PAD_HEIGHT 
     y=paddle1_pos-HALF_PAD_HEIGHT
